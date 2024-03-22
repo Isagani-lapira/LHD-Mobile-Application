@@ -8,10 +8,14 @@ class AppTheme {
       titleLarge: TextStyle(
         fontSize: 32,
         color: AppColor.primaryColor,
+        fontWeight: FontWeight.bold,
+        fontStyle: FontStyle.italic,
+        fontFamily: 'Poppins',
       ),
       bodyMedium: TextStyle(
         color: AppColor.textColor,
         fontSize: 14.0,
+        fontFamily: 'Poppins',
       ),
     ),
     inputDecorationTheme: const InputDecorationTheme(
@@ -20,6 +24,18 @@ class AppTheme {
         borderRadius: BorderRadius.all(
           Radius.circular(12.0),
         ),
+      ),
+    ),
+    textButtonTheme: const TextButtonThemeData(
+      style: ButtonStyle(
+        shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10.0)))),
+        backgroundColor: MaterialStatePropertyAll(AppColor.primaryColor),
+        textStyle: MaterialStatePropertyAll(TextStyle(
+          color: Colors.white,
+          fontFamily: 'Poppins',
+        )),
+        padding: MaterialStatePropertyAll(EdgeInsets.symmetric(vertical: 20.0)),
       ),
     ),
   );
