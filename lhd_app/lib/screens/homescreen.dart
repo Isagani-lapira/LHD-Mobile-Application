@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lhd_app/theme/colors.dart';
 import 'package:lhd_app/theme/theme.dart';
 import 'package:lhd_app/utils/string.dart';
+import 'package:lhd_app/widget/drawer.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -60,6 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
           });
         },
       ),
+      drawer: const CustomDrawer(),
     );
   }
 }
