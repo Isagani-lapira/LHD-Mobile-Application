@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lhd_app/screens/homescreen.dart';
 import 'package:lhd_app/screens/landingscreen.dart';
 import 'package:lhd_app/theme/theme.dart';
 
@@ -13,7 +14,7 @@ class LHDApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: AppTheme.lightTheme,
-      home: const LandingScreen(),
+      home: const HomeScreen(),
     );
   }
 }
