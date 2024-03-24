@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lhd_app/theme/colors.dart';
+import 'package:lhd_app/utils/constant.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
@@ -18,13 +19,9 @@ class AppTheme {
         fontFamily: 'Poppins',
       ),
     ),
-    inputDecorationTheme: const InputDecorationTheme(
-      border: OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.borderOutlineColor),
-        borderRadius: BorderRadius.all(
-          Radius.circular(12.0),
-        ),
-      ),
+    inputDecorationTheme: InputDecorationTheme(
+      focusedBorder: CustomBorders.BorderActiveStyle,
+      enabledBorder: CustomBorders.BorderInactiveStyle,
     ),
     textButtonTheme: const TextButtonThemeData(
       style: ButtonStyle(
@@ -44,6 +41,23 @@ class AppTheme {
       AppTheme.lightTheme.textButtonTheme.style!.copyWith(
     padding: const MaterialStatePropertyAll(
       EdgeInsets.symmetric(vertical: 5.0),
+    ),
+  );
+}
+
+//fields custom fields
+class CustomBorders {
+  static OutlineInputBorder BorderInactiveStyle = const OutlineInputBorder(
+    borderSide: BorderSide(color: AppColor.borderOutlineColor),
+    borderRadius: BorderRadius.all(
+      Radius.circular(12.0),
+    ),
+  );
+
+  static OutlineInputBorder BorderActiveStyle = const OutlineInputBorder(
+    borderSide: BorderSide(color: AppColor.secondaryColor, width: 2.0),
+    borderRadius: BorderRadius.all(
+      Radius.circular(12.0),
     ),
   );
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lhd_app/theme/colors.dart';
 
 const List<Map<String, dynamic>> kMenuItem = [
   {'title': 'Home', 'icon': Icon(Icons.home_outlined)},
@@ -23,3 +24,5 @@ const List<Map<String, String>> kProductItem = [
   {'COTTAGE GARAGE PLAN': 'assets/images/house5.png', "price_start": '\$45.00'},
   {'COTTAGE GARAGE PLAN': 'assets/images/house6.png', "price_start": '\$45.00'},
 ];
+
+const EdgeInsetsGeometry kBodyPadding = EdgeInsets.all(25.0);
