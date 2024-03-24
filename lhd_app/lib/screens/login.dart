@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lhd_app/theme/colors.dart';
 import 'package:lhd_app/utils/constant.dart';
 import 'package:lhd_app/utils/string.dart';
+import 'package:lhd_app/widget/primarybtn.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -47,17 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 textAlign: TextAlign.end,
               ),
-              Container(
-                margin: const EdgeInsets.only(top: 25.0),
-                width: double.infinity,
-                child: TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    AppString.login,
-                    style: TextStyle(inherit: false),
-                  ),
-                ),
-              ),
+              const PrimaryButton(label: AppString.login),
               const SizedBox(
                 width: double.infinity,
                 child: Row(
