@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "969703810604",
+    "project_id": "lhd-project-c55a7",
+    "storage_bucket": "lhd-project-c55a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969703810604:android:e27beb3c0d52986a155389",
+        "android_client_info": {
+          "package_name": "com.example.lhd_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBd7tXTpqwr7jMYGjyPMsum7KN_AUhe4_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
