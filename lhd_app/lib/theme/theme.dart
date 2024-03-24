@@ -39,4 +39,11 @@ class AppTheme {
       ),
     ),
   );
+
+  static ButtonStyle bodyButton =
+      AppTheme.lightTheme.textButtonTheme.style!.copyWith(
+    padding: const MaterialStatePropertyAll(
+      EdgeInsets.symmetric(vertical: 5.0),
+    ),
+  );
 }
