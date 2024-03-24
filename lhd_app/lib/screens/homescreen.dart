@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lhd_app/screens/tabs/hometab.dart';
 import 'package:lhd_app/theme/colors.dart';
 import 'package:lhd_app/theme/theme.dart';
 import 'package:lhd_app/utils/string.dart';
@@ -14,11 +15,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
 
-  List<Text> _sample = [
-    Text('Home'),
-    Text('SIPS'),
-    Text('Portfolio'),
-    Text('Profile'),
+  final List<Widget> _sample = [
+    HomeTab(),
   ];
 
   @override
@@ -30,7 +28,10 @@ class _HomeScreenState extends State<HomeScreen> {
           style: AppTheme.lightTheme.textTheme.bodyMedium,
         ),
       ),
-      body: Container(child: _sample[_currentIndex]),
+      body: Container(
+        padding: const EdgeInsets.all(25.0),
+        child: _sample[_currentIndex],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           CustomBottomNavBarItem(
