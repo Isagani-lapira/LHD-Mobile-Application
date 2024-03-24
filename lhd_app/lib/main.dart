@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:lhd_app/screens/homescreen.dart';
 import 'package:lhd_app/screens/landingscreen.dart';
 import 'package:lhd_app/theme/theme.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const LHDApp());
 }
 
