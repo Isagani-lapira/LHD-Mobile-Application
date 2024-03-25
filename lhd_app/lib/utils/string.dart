@@ -16,4 +16,11 @@ class AppString {
   static const String haveAccLabel = 'Already have an account?';
   static const String subNoTitleDesc =
       'More options and products available here at Larry\’s Home Designs';
+
+  static const String warningTitle = 'Ooopss!';
+  static const String successTitle = 'Success!';
+  static const String successRegis =
+      'Your account has been successfully created. Welcome aboard!';
+  static const String passChecking =
+      'Password and confirm password do not match. Please try again.';
 }
