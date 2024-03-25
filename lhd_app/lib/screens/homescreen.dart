@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:lhd_app/screens/tabs/hometab.dart';
+import 'package:lhd_app/screens/tabs/profiletab.dart';
 import 'package:lhd_app/theme/colors.dart';
 import 'package:lhd_app/theme/theme.dart';
 import 'package:lhd_app/utils/string.dart';
 import 'package:lhd_app/widget/drawer.dart';
 
 class HomeScreen extends StatefulWidget {
+  static const String id = 'home_screen';
   const HomeScreen({super.key});
 
   @override
@@ -17,6 +19,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _sample = [
     HomeTab(),
+    Text('SIPS'),
+    Text('Portfolio'),
+    ProfileTab(),
   ];
 
   @override

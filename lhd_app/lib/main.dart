@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lhd_app/screens/homescreen.dart';
 import 'package:lhd_app/screens/landingscreen.dart';
 import 'package:lhd_app/screens/login.dart';
+import 'package:lhd_app/screens/signupscreen.dart';
 import 'package:lhd_app/theme/theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -19,7 +20,13 @@ class LHDApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: AppTheme.lightTheme,
-      home: const LoginScreen(),
+      initialRoute: LandingScreen.id,
+      routes: {
+        LandingScreen.id: (context) => const LandingScreen(),
+        HomeScreen.id: (context) => const HomeScreen(),
+        LoginScreen.id: (context) => const LoginScreen(),
+        SignUpScreen.id: (context) => const SignUpScreen(),
+      },
     );
   }
 }
