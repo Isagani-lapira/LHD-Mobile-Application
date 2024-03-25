@@ -7,4 +7,7 @@ class AppString {
   static const String login = 'Login';
   static const String emailLabel = 'Enter valid email address';
   static const String passLabel = 'Enter password';
+  static const String noAccLabel = 'Don\'t have an account?';
+  static const String subNoTitleDesc =
+      'More options and products available here at Larry\’s Home Designs';
 }

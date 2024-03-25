@@ -49,7 +49,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 textAlign: TextAlign.end,
               ),
-              const PrimaryButton(label: AppString.login),
+              LoginBtn(
+                label: AppString.login,
+                onClicked: () {},
+              ),
               const SizedBox(
                 width: double.infinity,
                 child: Row(
