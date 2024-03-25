@@ -32,7 +32,9 @@ class OutlineBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
-      onPressed: onPressed(),
+      onPressed: () {
+        onPressed();
+      },
       child: const Text(
         'Sign up',
         style: TextStyle(

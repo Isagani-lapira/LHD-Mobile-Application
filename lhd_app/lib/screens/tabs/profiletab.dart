@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lhd_app/screens/login.dart';
+import 'package:lhd_app/screens/signupscreen.dart';
 import 'package:lhd_app/theme/theme.dart';
 import 'package:lhd_app/utils/string.dart';
 import 'package:lhd_app/widget/primarybtn.dart';
@@ -31,7 +32,9 @@ class ProfileTab extends StatelessWidget {
           Container(
             margin: const EdgeInsets.only(top: 10.0),
             width: double.infinity,
-            child: OutlineBtn(onPressed: () {}),
+            child: OutlineBtn(onPressed: () {
+              Navigator.pushNamed(context, SignUpScreen.id);
+            }),
           )
         ],
       ),
