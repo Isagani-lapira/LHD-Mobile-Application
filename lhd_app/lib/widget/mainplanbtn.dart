@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lhd_app/screens/homescreen.dart';
 import 'package:lhd_app/theme/colors.dart';
 import 'package:lhd_app/utils/string.dart';
 
@@ -40,7 +41,7 @@ class _ViewPlanButtonState extends State<ViewPlanButton>
     return SizedBox(
       width: double.infinity,
       child: TextButton(
-        onPressed: () {},
+        onPressed: () => Navigator.pushNamed(context, HomeScreen.id),
         style: AppTheme.lightTheme.textButtonTheme.style!.copyWith(
           backgroundColor: MaterialStatePropertyAll(
             AppColor.primaryColor.withOpacity(_controller.value),
