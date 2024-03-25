@@ -25,13 +25,13 @@ class ProfileTab extends StatelessWidget {
             AppString.subNoTitleDesc,
             textAlign: TextAlign.center,
           ),
-          LoginBtn(
+          PrimaryButton(
               label: 'Login',
               onClicked: () => Navigator.pushNamed(context, LoginScreen.id)),
           Container(
             margin: const EdgeInsets.only(top: 10.0),
             width: double.infinity,
-            child: SignUpBtn(onPressed: () {}),
+            child: OutlineBtn(onPressed: () {}),
           )
         ],
       ),
