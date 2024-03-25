@@ -19,7 +19,12 @@ class LHDApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: AppTheme.lightTheme,
-      home: const LoginScreen(),
+      initialRoute: LandingScreen.id,
+      routes: {
+        LandingScreen.id: (context) => const LandingScreen(),
+        HomeScreen.id: (context) => const HomeScreen(),
+        LoginScreen.id: (context) => const LoginScreen(),
+      },
     );
   }
 }

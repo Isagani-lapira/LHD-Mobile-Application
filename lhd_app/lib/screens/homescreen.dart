@@ -6,6 +6,7 @@ import 'package:lhd_app/utils/string.dart';
 import 'package:lhd_app/widget/drawer.dart';
 
 class HomeScreen extends StatefulWidget {
+  static const String id = 'home_screen';
   const HomeScreen({super.key});
 
   @override

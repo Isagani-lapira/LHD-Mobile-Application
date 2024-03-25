@@ -4,6 +4,7 @@ import 'package:lhd_app/widget/title.dart';
 import 'package:lhd_app/widget/mainplanbtn.dart';
 
 class LandingScreen extends StatefulWidget {
+  static const String id = 'landing_screen';
   const LandingScreen({super.key});
 
   @override
