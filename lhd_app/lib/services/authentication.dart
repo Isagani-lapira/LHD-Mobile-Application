@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:lhd_app/screens/homescreen.dart';
 import 'package:lhd_app/utils/string.dart';
 import 'package:lhd_app/widget/alertdialog.dart';
 
@@ -17,16 +18,20 @@ class Authentication {
     return isLoggedIn;
   }
 
-  static void createAccount(context, emailAddress, password) async {
+  static void isCreationSuccess(context, emailAddress, password) async {
     try {
       await auth.createUserWithEmailAndPassword(
           email: emailAddress, password: password);
 
       showDialog(
+        barrierDismissible: false,
         context: context,
-        builder: (context) => const CustomAlertDialog(
+        builder: (context) => CustomAlertDialog(
           title: AppString.successTitle,
           message: AppString.successRegis,
+          onPressed: (context) {
+            Navigator.pushReplacementNamed(context, HomeScreen.id);
+          },
         ),
       );
     } catch (e) {
@@ -35,6 +40,7 @@ class Authentication {
         builder: (context) => CustomAlertDialog(
           title: AppString.warningTitle,
           message: tripErrorMessage(e.toString()),
+          onPressed: () {},
         ),
       );
     }

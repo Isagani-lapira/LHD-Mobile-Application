@@ -8,10 +8,12 @@ import 'package:lhd_app/utils/string.dart';
 class CustomAlertDialog extends StatelessWidget {
   final String title;
   final String message;
+  final Function? onPressed;
   const CustomAlertDialog({
     super.key,
     required this.title,
     required this.message,
+    this.onPressed,
   });
 
   Widget selectDialog(context) {
@@ -33,7 +35,7 @@ class CustomAlertDialog extends StatelessWidget {
               style: TextStyle(color: AppColor.textColor),
             ),
             onPressed: () {
-              Navigator.pop(context);
+              onPressed!(context);
             },
           ),
         ],
@@ -54,7 +56,7 @@ class CustomAlertDialog extends StatelessWidget {
       actions: [
         TextButton(
           onPressed: () {
-            Navigator.pop(context);
+            onPressed!(context);
           },
           style: const ButtonStyle(
             backgroundColor: MaterialStatePropertyAll(Colors.transparent),
