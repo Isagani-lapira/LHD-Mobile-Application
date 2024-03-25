@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:lhd_app/screens/signupscreen.dart';
 import 'package:lhd_app/theme/colors.dart';
 import 'package:lhd_app/utils/constant.dart';
 import 'package:lhd_app/utils/string.dart';
 import 'package:lhd_app/widget/primarybtn.dart';
+import 'package:lhd_app/widget/wraphighlight.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';
@@ -49,24 +51,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 textAlign: TextAlign.end,
               ),
-              LoginBtn(
+              PrimaryButton(
                 label: AppString.login,
                 onClicked: () {},
               ),
-              const SizedBox(
-                width: double.infinity,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Don\’t have account?'),
-                    Text(
-                      'Create account',
-                      style: TextStyle(
-                          color: AppColor.primaryColor,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
+              const HighlightWrapper(
+                lightText: AppString.noAccLabel,
+                highlightedText: AppString.create,
+                routeName: SignUpScreen.id,
               )
             ],
           ),
