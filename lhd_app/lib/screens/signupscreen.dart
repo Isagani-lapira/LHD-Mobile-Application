@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lhd_app/screens/homescreen.dart';
 import 'package:lhd_app/screens/login.dart';
 import 'package:lhd_app/services/authentication.dart';
 import 'package:lhd_app/utils/constant.dart';
@@ -20,18 +21,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
   String _emailAdd = '';
   String _password = '';
   String _confirmPass = '';
+  final TextEditingController _passController = TextEditingController();
 
   void processRegistration(String confirmPass) async {
     if (confirmPass == _password) {
-      Authentication.createAccount(context, _emailAdd, _password);
+      Authentication.isCreationSuccess(context, _emailAdd, _password);
     } else {
       showDialog(
         context: context,
-        builder: (context) => const CustomAlertDialog(
+        builder: (context) => CustomAlertDialog(
           title: AppString.warningTitle,
           message: AppString.passChecking,
+          onPressed: (dialogContext) {
+            Navigator.pop(dialogContext);
+          },
         ),
       );
+      _passController.clear();
     }
   }
 
@@ -74,6 +80,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 onChanged: (confirmPass) {
                   _confirmPass = confirmPass;
                 },
+                controller: _passController,
               ),
               PrimaryButton(
                 label: 'Sign up',
