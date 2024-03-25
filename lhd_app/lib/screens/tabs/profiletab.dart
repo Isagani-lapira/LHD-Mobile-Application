@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lhd_app/screens/login.dart';
-import 'package:lhd_app/theme/colors.dart';
 import 'package:lhd_app/theme/theme.dart';
 import 'package:lhd_app/utils/string.dart';
 import 'package:lhd_app/widget/primarybtn.dart';
