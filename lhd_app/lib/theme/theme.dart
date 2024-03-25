@@ -35,6 +35,19 @@ class AppTheme {
         padding: MaterialStatePropertyAll(EdgeInsets.symmetric(vertical: 20.0)),
       ),
     ),
+    outlinedButtonTheme: const OutlinedButtonThemeData(
+      style: ButtonStyle(
+          shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10.0)))),
+          side: MaterialStatePropertyAll(
+            BorderSide(
+              color: AppColor.primaryColor,
+              width: 1.5,
+            ),
+          ),
+          padding:
+              MaterialStatePropertyAll(EdgeInsets.symmetric(vertical: 20.0))),
+    ),
   );
 
   static ButtonStyle bodyButton =
