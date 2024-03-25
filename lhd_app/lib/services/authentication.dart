@@ -18,11 +18,16 @@ class Authentication {
     return isLoggedIn;
   }
 
-  static void isCreationSuccess(context, emailAddress, password) async {
+  static void isCreationSuccess(context, String emailAddress, String password,
+      {Function? onLoad}) async {
     try {
       await auth.createUserWithEmailAndPassword(
           email: emailAddress, password: password);
 
+      //process after loading
+      if (onLoad != null) {
+        onLoad();
+      }
       showDialog(
         barrierDismissible: false,
         context: context,

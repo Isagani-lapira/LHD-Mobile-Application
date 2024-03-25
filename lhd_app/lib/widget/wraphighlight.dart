@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lhd_app/theme/colors.dart';
-import 'package:lhd_app/utils/string.dart';
 
 class HighlightWrapper extends StatelessWidget {
   final String lightText;
