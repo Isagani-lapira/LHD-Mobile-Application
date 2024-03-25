@@ -13,7 +13,7 @@ class ProfileTab extends StatelessWidget {
     return Center(
       child: Column(
         children: [
-          Image.asset('assets/images/building_logo.png'),
+          Image.asset('assets/images/house__blueprint.png'),
           Text(
             AppString.noAccLabel,
             style: AppTheme.lightTheme.textTheme.bodyMedium!.copyWith(
