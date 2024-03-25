@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lhd_app/screens/homescreen.dart';
 import 'package:lhd_app/screens/login.dart';
-import 'package:lhd_app/theme/colors.dart';
+import 'package:lhd_app/services/authentication.dart';
 import 'package:lhd_app/utils/constant.dart';
 import 'package:lhd_app/utils/string.dart';
+import 'package:lhd_app/widget/alertdialog.dart';
 import 'package:lhd_app/widget/primarybtn.dart';
 import 'package:lhd_app/widget/textfield.dart';
 import 'package:lhd_app/widget/wraphighlight.dart';
@@ -17,6 +17,24 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  String _emailAdd = '';
+  String _password = '';
+  String _confirmPass = '';
+
+  void processRegistration(String confirmPass) async {
+    if (confirmPass == _password) {
+      Authentication.createAccount(context, _emailAdd, _password);
+    } else {
+      showDialog(
+        context: context,
+        builder: (context) => const CustomAlertDialog(
+          title: AppString.warningTitle,
+          message: AppString.passChecking,
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,19 +54,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
               const SizedBox(
                 height: 25.0,
               ),
-              const CustomTextField(
+              CustomTextField(
                 label: AppString.email,
                 hint: AppString.emailLabel,
+                onChanged: (email) {
+                  _emailAdd = email;
+                },
               ),
-              const CustomTextField(
+              CustomTextField(
                 label: AppString.pass,
                 hint: AppString.passLabel,
+                onChanged: (value) {
+                  _password = value;
+                },
               ),
-              const CustomTextField(
-                  label: AppString.confirmPass, hint: AppString.passLabel),
+              CustomTextField(
+                label: AppString.confirmPass,
+                hint: AppString.passLabel,
+                onChanged: (confirmPass) {
+                  _confirmPass = confirmPass;
+                },
+              ),
               PrimaryButton(
                 label: 'Sign up',
-                onClicked: () {},
+                onClicked: () => processRegistration(_confirmPass),
               ),
               const HighlightWrapper(
                 lightText: AppString.haveAccLabel,

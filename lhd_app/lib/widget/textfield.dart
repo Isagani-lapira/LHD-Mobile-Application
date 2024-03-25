@@ -3,7 +3,13 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatelessWidget {
   final String label;
   final String hint;
-  const CustomTextField({super.key, required this.label, required this.hint});
+  final Function onChanged;
+  const CustomTextField({
+    super.key,
+    required this.label,
+    required this.hint,
+    required this.onChanged,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +17,12 @@ class CustomTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(label),
-        TextField(decoration: InputDecoration(hintText: hint)),
+        TextField(
+          decoration: InputDecoration(hintText: hint),
+          onChanged: (value) {
+            onChanged(value);
+          },
+        ),
         const SizedBox(height: 10.0),
       ],
     );
