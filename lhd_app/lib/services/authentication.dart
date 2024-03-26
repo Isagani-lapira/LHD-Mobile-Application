@@ -55,4 +55,27 @@ class Authentication {
   static String tripErrorMessage(String error) {
     return error.substring(error.indexOf(']') + 1).trim();
   }
+
+  static void signIn(context, String emailAdd, String password,
+      {Function? onLoad}) async {
+    try {
+      await auth.signInWithEmailAndPassword(
+          email: emailAdd, password: password);
+
+      if (onLoad != null) onLoad();
+    } catch (e) {
+      if (onLoad != null) onLoad();
+      showDialog(
+          context: context,
+          builder: (context) {
+            return CustomAlertDialog(
+              title: AppString.warningTitle,
+              message: tripErrorMessage(e.toString()),
+              onPressed: (dialogContext) {
+                Navigator.pop(dialogContext);
+              },
+            );
+          });
+    }
+  }
 }

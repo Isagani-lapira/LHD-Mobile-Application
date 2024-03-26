@@ -5,12 +5,14 @@ class CustomTextField extends StatelessWidget {
   final String hint;
   final Function onChanged;
   final TextEditingController? controller;
+  final bool obscure;
   const CustomTextField({
     super.key,
     required this.label,
     required this.hint,
     required this.onChanged,
     this.controller,
+    this.obscure = false,
   });
 
   @override
@@ -20,6 +22,7 @@ class CustomTextField extends StatelessWidget {
       children: [
         Text(label),
         TextField(
+          obscureText: obscure,
           controller: controller,
           decoration: InputDecoration(hintText: hint),
           onChanged: (value) {
