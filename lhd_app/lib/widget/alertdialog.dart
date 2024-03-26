@@ -22,6 +22,7 @@ class CustomAlertDialog extends StatelessWidget {
         title: Text(
           title,
           style: TextStyle(
+            fontSize: 22.0,
             color: (title == AppString.successTitle)
                 ? Colors.green
                 : AppColor.textColor,
@@ -45,6 +46,7 @@ class CustomAlertDialog extends StatelessWidget {
       title: Text(
         title,
         style: TextStyle(
+          fontSize: 22.0,
           color: (title == AppString.successTitle)
               ? Colors.green
               : AppColor.textColor,
