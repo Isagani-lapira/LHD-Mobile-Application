@@ -15,7 +15,7 @@ class AppString {
   static const String noAccLabel = 'Don\'t have an account?';
   static const String haveAccLabel = 'Already have an account?';
   static const String subNoTitleDesc =
-      'More options and products available here at Larry\’s Home Designs';
+      'More options and products available here at Larry’s Home Designs';
 
   static const String warningTitle = 'Ooopss!';
   static const String successTitle = 'Success!';
@@ -23,4 +23,14 @@ class AppString {
       'Your account has been successfully created. Welcome aboard!';
   static const String passChecking =
       'Password and confirm password do not match. Please try again.';
+
+  //SIPS text
+  static const String sipTitle =
+      'Can Energy Efficient House Plans be Simplified and Effective?';
+
+  static const String sipSubDesc =
+      'Building Tomorrow, Today: SIPS and Energy-Efficient House Plans Redefining Sustainable Living';
+
+  static const String interiorTxt = 'Interior Design';
+  static const String exteriorTxt = 'Exterior Design';
 }

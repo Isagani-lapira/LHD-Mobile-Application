@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lhd_app/screens/tabs/hometab.dart';
 import 'package:lhd_app/screens/tabs/profiletab.dart';
+import 'package:lhd_app/screens/tabs/siptab.dart';
 import 'package:lhd_app/theme/colors.dart';
 import 'package:lhd_app/theme/theme.dart';
 import 'package:lhd_app/utils/string.dart';
@@ -18,10 +19,10 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
 
   final List<Widget> _sample = [
-    HomeTab(),
-    Text('SIPS'),
-    Text('Portfolio'),
-    ProfileTab(),
+    const HomeTab(),
+    const SIPTab(),
+    const Text('Portfolio'),
+    const ProfileTab(),
   ];
 
   @override

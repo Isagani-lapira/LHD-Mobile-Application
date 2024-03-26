@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lhd_app/screens/homescreen.dart';
 import 'package:lhd_app/screens/signupscreen.dart';
 import 'package:lhd_app/services/authentication.dart';
-import 'package:lhd_app/theme/colors.dart';
 import 'package:lhd_app/utils/constant.dart';
 import 'package:lhd_app/utils/string.dart';
 import 'package:lhd_app/widget/loading.dart';
