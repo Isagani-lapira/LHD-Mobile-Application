@@ -33,4 +33,7 @@ class AppString {
 
   static const String interiorTxt = 'Interior Design';
   static const String exteriorTxt = 'Exterior Design';
+  static const String portfolio = 'Portfolio';
+  static const String portfolioSubtitle =
+      'This page serves as a showcase for our portfolio of works, highlighting our expertise and accomplishments.';
 }
