@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lhd_app/theme/colors.dart';
 import 'package:lhd_app/utils/string.dart';
 import 'package:chips_choice/chips_choice.dart';
+import 'package:lhd_app/widget/portfoliolist.dart';
 
 class PortfolioTab extends StatefulWidget {
   const PortfolioTab({super.key});
@@ -39,7 +40,11 @@ class _PortfolioTabState extends State<PortfolioTab> {
         ),
         ChipsChoice<int>.single(
           value: tag,
-          onChanged: (index) => setState(() => tag = index),
+          onChanged: (index) {
+            setState(() {
+              tag = index;
+            });
+          },
           choiceItems: C2Choice.listFrom(
             source: options,
             value: (i, v) => i,
@@ -54,6 +59,7 @@ class _PortfolioTabState extends State<PortfolioTab> {
             color: AppColor.backgroundColor,
           ),
         ),
+        const Expanded(child: PortfolioList())
       ],
     );
   }
