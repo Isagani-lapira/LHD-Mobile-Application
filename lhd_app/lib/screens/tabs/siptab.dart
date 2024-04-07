@@ -25,11 +25,11 @@ class _SIPTabState extends State<SIPTab> {
           AppString.sipSubDesc,
           style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w300),
         ),
-        const DesignDescription(
+        const DetailWidget(
           title: AppString.interiorTxt,
           descriptions: kInteriorDescrip,
         ),
-        const DesignDescription(
+        const DetailWidget(
           title: AppString.exteriorTxt,
           descriptions: kExteriorDescrip,
         ),
