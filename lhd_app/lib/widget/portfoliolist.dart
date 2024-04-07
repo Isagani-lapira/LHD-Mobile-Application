@@ -40,7 +40,7 @@ class _PortfolioListState extends State<PortfolioList> {
                     if (loadingProgress != null) {
                       return Center(
                         child: LinearProgressIndicator(
-                          color: AppColor.primaryColor,
+                          color: AppColor.secondaryColor,
                           value: loadingProgress.expectedTotalBytes != null
                               ? loadingProgress.cumulativeBytesLoaded /
                                   loadingProgress.expectedTotalBytes!
