@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lhd_app/models/category.dart';
 import 'package:lhd_app/screens/tabs/hometab.dart';
 import 'package:lhd_app/screens/tabs/portfoliotab.dart';
 import 'package:lhd_app/screens/tabs/profiletab.dart';
@@ -7,6 +8,7 @@ import 'package:lhd_app/theme/colors.dart';
 import 'package:lhd_app/theme/theme.dart';
 import 'package:lhd_app/utils/string.dart';
 import 'package:lhd_app/widget/drawer.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = 'home_screen';
@@ -22,7 +24,10 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _sample = [
     const HomeTab(),
     const SIPTab(),
-    const PortfolioTab(),
+    ChangeNotifierProvider(
+      create: (BuildContext context) => CategoryData(),
+      child: const PortfolioTab(),
+    ),
     const ProfileTab(),
   ];
 
