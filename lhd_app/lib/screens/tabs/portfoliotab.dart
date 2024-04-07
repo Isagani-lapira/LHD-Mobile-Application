@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:lhd_app/models/category.dart';
 import 'package:lhd_app/theme/colors.dart';
 import 'package:lhd_app/utils/string.dart';
 import 'package:chips_choice/chips_choice.dart';
 import 'package:lhd_app/widget/portfoliolist.dart';
+import 'package:provider/provider.dart';
 
 class PortfolioTab extends StatefulWidget {
   const PortfolioTab({super.key});
@@ -12,18 +14,9 @@ class PortfolioTab extends StatefulWidget {
 }
 
 class _PortfolioTabState extends State<PortfolioTab> {
-  int tag = 1;
-  List<String> options = [
-    'All work',
-    'Tiny houses',
-    '3D House Plan',
-    'Barn',
-    'Garage',
-    'SIPS',
-    'Wheelchair Accessible',
-  ];
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<CategoryData>(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -39,14 +32,13 @@ class _PortfolioTabState extends State<PortfolioTab> {
           style: TextStyle(fontSize: 12.0),
         ),
         ChipsChoice<int>.single(
-          value: tag,
+          value: provider.tag,
           onChanged: (index) {
-            setState(() {
-              tag = index;
-            });
+            setState(() => provider.tag = index);
+            provider.setSelectedOption(provider.tag);
           },
           choiceItems: C2Choice.listFrom(
-            source: options,
+            source: provider.options,
             value: (i, v) => i,
             label: (i, v) => v,
           ),

@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:lhd_app/models/category.dart';
 import 'package:lhd_app/services/firestore.dart';
+import 'package:provider/provider.dart';
 
 import '../theme/colors.dart';
 
@@ -14,6 +16,7 @@ class PortfolioList extends StatefulWidget {
 class _PortfolioListState extends State<PortfolioList> {
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<CategoryData>(context);
     return FutureBuilder<List<DocumentSnapshot>>(
       builder: (context, snap) {
         if (snap.connectionState == ConnectionState.waiting) {
@@ -55,7 +58,9 @@ class _PortfolioListState extends State<PortfolioList> {
           );
         }
       },
-      future: FireStoreService.fetchData(),
+      future: FireStoreService.fetchData(
+        (provider.currentOption != 'All work') ? provider.currentOption : '',
+      ),
     );
   }
 }
