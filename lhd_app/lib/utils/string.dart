@@ -36,4 +36,9 @@ class AppString {
   static const String portfolio = 'Portfolio';
   static const String portfolioSubtitle =
       'This page serves as a showcase for our portfolio of works, highlighting our expertise and accomplishments.';
+
+  //about us
+  static const String aboutTxt = 'About Us';
+  static const String aboutDesc =
+      '"Harness the Power of the Larry\'s Home Designs Guarantee for Your Peace of Mind"';
 }

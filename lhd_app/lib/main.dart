@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lhd_app/screens/aboutusscreen.dart';
 import 'package:lhd_app/screens/homescreen.dart';
 import 'package:lhd_app/screens/landingscreen.dart';
 import 'package:lhd_app/screens/login.dart';
@@ -26,6 +27,7 @@ class LHDApp extends StatelessWidget {
         HomeScreen.id: (context) => const HomeScreen(),
         LoginScreen.id: (context) => const LoginScreen(),
         SignUpScreen.id: (context) => const SignUpScreen(),
+        AboutUsScreen.id: (context) => const AboutUsScreen(),
       },
     );
   }
