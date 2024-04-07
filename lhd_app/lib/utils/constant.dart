@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lhd_app/screens/aboutusscreen.dart';
+import 'package:lhd_app/screens/homescreen.dart';
 
 const List<Map<String, dynamic>> kMenuItem = [
   {'title': 'Home', 'icon': Icon(Icons.home_outlined)},
@@ -68,4 +70,75 @@ const List<String> kSIPLinks = [
   'https://www.youtube.com/watch?v=W3z8qRak17k',
   'https://www.youtube.com/watch?v=3emN6kXHIeg',
   'https://www.youtube.com/watch?v=OkQkr2erwjs',
+];
+
+const List<Map<String, String>> kAbouDescr = [
+  {
+    'title': '1. An “Industry First” guarantee on home design accuracy.',
+    'description':
+        'Nowhere during our search of home designers have we ever seen a guarantee offered. Not only do we offer a guarantee on our work'
+  },
+  {
+    'title': '2. Over 20 years of custom planning experience.',
+    'description':
+        'Larry\’s design skills were uniquely forged from within a construction family. Working for a boss can be difficult, but working for one\’s own father is even harder.'
+  },
+  {
+    'title': '3. The benefits of continuing education.',
+    'description':
+        'Larry\’s Home Designs does not believe in resting on past experience by itself. Ongoing education within the home design and building industry is a tool that helps them stay on top of their craft.'
+  },
+  {
+    'title': '4. A passion for detail.',
+    'description':
+        'In a conversation with one of our contractors, the word “accuracy” was his description of one of the three main reasons he doesn\’t use another home designer.'
+  },
+  {
+    'title': '5. Professionalism and a family-friendly atmosphere.',
+    'description':
+        'You\’ve likely heard the phrase about “treating friends like family and family like friends.”'
+  },
+  {
+    'title':
+        '6. Flexible office hours and building bridges of understanding and compatibility.',
+    'description':
+        'Typically homeowner’s and contractors have conflicting schedules when it comes to finding a good time to get together for project discussions.'
+  },
+  {
+    'title': '7. Creating an optimal design and building experience.',
+    'description':
+        'The quality of your design experience with us and the work we do extends over into your overall building experience.'
+  },
+];
+
+const List<Map<String, String>> kshowcase = [
+  {
+    'title': 'The Bachelors',
+    'imagePath':
+        'https://larryshomedesigns.com/wp-content/uploads/2024/02/the-bachelore.png',
+  },
+  {
+    'title': 'THE HERMIT',
+    'imagePath':
+        'https://larryshomedesigns.com/wp-content/uploads/2024/02/the-hermit.png'
+  },
+  {
+    'title': 'THE LEGEND',
+    'imagePath':
+        'https://larryshomedesigns.com/wp-content/uploads/2024/02/the-legend.png'
+  },
+  {
+    'title': 'THE OASIS',
+    'imagePath':
+        'https://larryshomedesigns.com/wp-content/uploads/2024/02/the-oasis.png'
+  },
+];
+
+const List<String> kDrawerNavId = [
+  HomeScreen.id,
+  'shopping',
+  AboutUsScreen.id,
+  'services',
+  'roq',
+  'contact',
 ];

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:lhd_app/theme/colors.dart';
 import 'package:lhd_app/widget/alertdialog.dart';
 
-class DesignDescription extends StatelessWidget {
+class DetailWidget extends StatelessWidget {
   final String title;
   final List descriptions;
-  const DesignDescription({
+  const DetailWidget({
     super.key,
     required this.title,
     required this.descriptions,

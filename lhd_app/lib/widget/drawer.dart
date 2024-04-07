@@ -39,10 +39,13 @@ class _CustomDrawerState extends State<CustomDrawer> {
                     ),
                   ),
                 ),
-                for (var menu in kMenuItem)
+                for (var i = 0; i < kMenuItem.length; i++)
                   ListTile(
-                    leading: menu['icon'],
-                    title: Text(menu['title']),
+                    onTap: () {
+                      Navigator.pushNamed(context, kDrawerNavId[i]);
+                    },
+                    leading: kMenuItem[i]['icon'],
+                    title: Text(kMenuItem[i]['title']),
                   )
               ],
             ),
