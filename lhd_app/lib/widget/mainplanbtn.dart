@@ -51,6 +51,7 @@ class _ViewPlanButtonState extends State<ViewPlanButton>
           AppString.housePlan,
           style: TextStyle(
             color: Colors.white,
+            fontWeight: FontWeight.bold
           ),
         ),
       ),
