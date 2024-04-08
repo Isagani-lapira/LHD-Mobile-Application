@@ -15,6 +15,8 @@ class FireStoreService {
     return querySnapshot.docs;
   }
 
-  static Stream<QuerySnapshot> feedbackStream() =>
-      FirebaseFirestore.instance.collection('feedback').snapshots();
+  static Stream<QuerySnapshot> feedbackStream() => FirebaseFirestore.instance
+      .collection('feedback')
+      .orderBy('datePosted', descending: true)
+      .snapshots();
 }

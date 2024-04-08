@@ -4,7 +4,7 @@ import 'package:lhd_app/utils/constant.dart';
 import 'package:lhd_app/utils/string.dart';
 import 'package:lhd_app/widget/aboutwidget.dart';
 import 'package:lhd_app/widget/designdescription.dart';
-import 'package:lhd_app/widget/draggablebottomsheet.dart';
+import 'package:lhd_app/widget/feedbacksheet.dart';
 
 class AboutUsScreen extends StatelessWidget {
   static const String id = 'aboutUs_screen';

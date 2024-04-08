@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lhd_app/models/feedbackmodel.dart';
 import 'package:lhd_app/services/firestore.dart';
 import 'package:lhd_app/theme/colors.dart';
 import 'package:lhd_app/utils/constant.dart';
@@ -27,8 +28,7 @@ class _FeedbackSheetState extends State<FeedbackSheet> {
               builder: ((context, snapshot) {
                 if (!snapshot.hasData) {
                   return const Center(
-                    child:
-                        CircularProgressIndicator(color: AppColor.primaryColor),
+                    child: CircularProgressIndicator(color: Colors.white),
                   );
                 }
 
@@ -40,10 +40,12 @@ class _FeedbackSheetState extends State<FeedbackSheet> {
                       DateFormat('MMM,dd,yyyy').format(datePosted);
                   feedbackWidget.add(
                     FeedBackWidget(
-                      fullname: feedback['fullname'],
-                      position: feedback['position'],
-                      message: feedback['message'],
-                      date: formattedDate,
+                      feedBackModel: FeedBackModel(
+                        fullname: feedback['fullname'],
+                        position: feedback['position'],
+                        message: feedback['message'],
+                        date: formattedDate,
+                      ),
                     ),
                   );
                 }
@@ -86,17 +88,8 @@ class _FeedbackSheetState extends State<FeedbackSheet> {
 }
 
 class FeedBackWidget extends StatelessWidget {
-  final String fullname;
-  final String position;
-  final String message;
-  final String date;
-  const FeedBackWidget({
-    super.key,
-    required this.fullname,
-    required this.position,
-    required this.message,
-    required this.date,
-  });
+  final FeedBackModel feedBackModel;
+  const FeedBackWidget({super.key, required this.feedBackModel});
 
   @override
   Widget build(BuildContext context) {
@@ -104,16 +97,17 @@ class FeedBackWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          fullname,
+          feedBackModel.fullname,
           style: const TextStyle(
               color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16.0),
         ),
-        Text(position, style: const TextStyle(color: Colors.white)),
+        Text(feedBackModel.position,
+            style: const TextStyle(color: Colors.white)),
         const SizedBox(height: 10.0),
-        Text(message,
+        Text(feedBackModel.message,
             style: const TextStyle(color: Colors.white, fontSize: 12.0)),
         const SizedBox(height: 10.0),
-        Text(date,
+        Text(feedBackModel.date,
             style: const TextStyle(
               fontSize: 12.0,
               color: Colors.white60,
