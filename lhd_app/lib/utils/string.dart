@@ -41,4 +41,6 @@ class AppString {
   static const String aboutTxt = 'About Us';
   static const String aboutDesc =
       '"Harness the Power of the Larry\'s Home Designs Guarantee for Your Peace of Mind"';
+
+  static const String feedbackTitle = 'Feedback from our previous clients!';
 }
