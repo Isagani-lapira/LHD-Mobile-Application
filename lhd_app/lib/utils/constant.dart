@@ -142,3 +142,10 @@ const List<String> kDrawerNavId = [
   'roq',
   'contact',
 ];
+
+const BoxDecoration kContainerDecor = BoxDecoration(
+  borderRadius: BorderRadius.only(
+    topLeft: Radius.circular(16.0),
+    topRight: Radius.circular(16.0),
+  ),
+);
