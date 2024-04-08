@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:lhd_app/services/firestore.dart';
 import 'package:lhd_app/theme/colors.dart';
 import 'package:lhd_app/utils/constant.dart';
 import 'package:lhd_app/utils/string.dart';
+import 'package:intl/intl.dart';
 
 class FeedbackSheet extends StatefulWidget {
   const FeedbackSheet({super.key});
@@ -11,6 +13,49 @@ class FeedbackSheet extends StatefulWidget {
 }
 
 class _FeedbackSheetState extends State<FeedbackSheet> {
+  void _showFeedback(BuildContext context) async {
+    var snapShot = FireStoreService.feedbackStream();
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            padding: const EdgeInsets.all(25.0),
+            decoration:
+                kContainerDecor.copyWith(color: AppColor.secondaryColor),
+            child: StreamBuilder(
+              stream: snapShot,
+              builder: ((context, snapshot) {
+                if (!snapshot.hasData) {
+                  return const Center(
+                    child:
+                        CircularProgressIndicator(color: AppColor.primaryColor),
+                  );
+                }
+
+                final feedbackList = snapshot.data?.docs;
+                List<FeedBackWidget> feedbackWidget = [];
+                for (var feedback in feedbackList!) {
+                  DateTime datePosted = feedback['datePosted'].toDate();
+                  String formattedDate =
+                      DateFormat('MMM,dd,yyyy').format(datePosted);
+                  feedbackWidget.add(
+                    FeedBackWidget(
+                      fullname: feedback['fullname'],
+                      position: feedback['position'],
+                      message: feedback['message'],
+                      date: formattedDate,
+                    ),
+                  );
+                }
+                return ListView(
+                  children: feedbackWidget,
+                );
+              }),
+            ),
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,21 +73,7 @@ class _FeedbackSheetState extends State<FeedbackSheet> {
             const SizedBox(width: 10.0),
             GestureDetector(
               onTap: () {
-                showModalBottomSheet(
-                    context: context,
-                    builder: (context) {
-                      return Container(
-                        padding: EdgeInsets.all(25.0),
-                        decoration: kContainerDecor.copyWith(
-                            color: AppColor.secondaryColor),
-                        child: ListView(
-                          children: [
-                            FeedBackWidget(),
-                            FeedBackWidget(),
-                          ],
-                        ),
-                      );
-                    });
+                _showFeedback(context);
               },
               child: const Icon(
                 Icons.launch,
@@ -55,40 +86,40 @@ class _FeedbackSheetState extends State<FeedbackSheet> {
 }
 
 class FeedBackWidget extends StatelessWidget {
-  const FeedBackWidget({super.key});
+  final String fullname;
+  final String position;
+  final String message;
+  final String date;
+  const FeedBackWidget({
+    super.key,
+    required this.fullname,
+    required this.position,
+    required this.message,
+    required this.date,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          'John rar',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontSize: 16.0,
-          ),
+          fullname,
+          style: const TextStyle(
+              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16.0),
         ),
-        Text(
-          'CEO & Founder',
-          style: TextStyle(color: Colors.white),
-        ),
-        SizedBox(height: 10.0),
-        Text(
-          'Believe me, Larry & his ability to design structures, is a \'jewel in the rough.\' I was referred to him as an experienced log home designer & I had either a log (or log slab) home in mind. I contacted Larry, & in no time, had plans & the specifications. This was to the last nail & piece of siding.Larry\'s work is reasonably priced & excellent quality. He knows builders & suppliers who can have you in \'front of the fireplace\' in no time.',
-          style: TextStyle(color: Colors.white, fontSize: 12.0),
-        ),
-        SizedBox(height: 10.0),
-        Text(
-          '22.03.2021',
-          style: TextStyle(
-            fontSize: 12.0,
-            color: Colors.white60,
-          ),
-          textAlign: TextAlign.end,
-        ),
-        SizedBox(height: 10.0),
+        Text(position, style: const TextStyle(color: Colors.white)),
+        const SizedBox(height: 10.0),
+        Text(message,
+            style: const TextStyle(color: Colors.white, fontSize: 12.0)),
+        const SizedBox(height: 10.0),
+        Text(date,
+            style: const TextStyle(
+              fontSize: 12.0,
+              color: Colors.white60,
+            ),
+            textAlign: TextAlign.end),
+        const SizedBox(height: 10.0),
       ],
     );
   }

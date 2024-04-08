@@ -14,4 +14,7 @@ class FireStoreService {
             await FirebaseFirestore.instance.collection('portfolio').get();
     return querySnapshot.docs;
   }
+
+  static Stream<QuerySnapshot> feedbackStream() =>
+      FirebaseFirestore.instance.collection('feedback').snapshots();
 }
