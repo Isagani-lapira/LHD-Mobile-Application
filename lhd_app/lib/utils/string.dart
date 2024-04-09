@@ -6,6 +6,7 @@ class AppString {
   static const String roq = 'Request for Quote';
   static const String login = 'Login';
   static const String register = 'Registration';
+  static const String services = 'Services';
   static const String emailLabel = 'Enter valid email address';
   static const String email = 'Email Address';
   static const String pass = 'Password';
@@ -43,4 +44,8 @@ class AppString {
       '"Harness the Power of the Larry\'s Home Designs Guarantee for Your Peace of Mind"';
 
   static const String feedbackTitle = 'Feedback from our previous clients!';
+
+  //Services
+  static const String headlineService =
+      'Are You Ready To Turn Your Residential Floor Plans Into Reality?';
 }
