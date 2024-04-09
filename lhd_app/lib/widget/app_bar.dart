@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lhd_app/theme/colors.dart';
 
 PreferredSizeWidget buildAppBar(BuildContext context) {
   return AppBar(
@@ -8,12 +9,12 @@ PreferredSizeWidget buildAppBar(BuildContext context) {
         fontFamily: 'Poppins',
         fontSize: 16,
         fontWeight: FontWeight.bold,
-        color: Color(0xFF292929),
+        color: AppColor.textColor,
       ),
     ),
     leading: IconButton(
       icon: Icon(Icons.arrow_back_ios),
-      color: Color(0xFF292929),
+      color: AppColor.textColor,
       onPressed: () {
         Navigator.pop(context);
       },

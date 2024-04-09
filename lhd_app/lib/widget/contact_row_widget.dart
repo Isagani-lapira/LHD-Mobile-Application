@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:lhd_app/theme/colors.dart';
 
 Widget buildContactRow(IconData iconData, String title, String content) {
   return Row(
     children: [
-      Icon(iconData, color: Color(0xFF292929), size: 30),
+      Icon(iconData, color: AppColor.textColor, size: 30),
       SizedBox(width: 5),
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,

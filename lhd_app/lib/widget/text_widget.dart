@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lhd_app/theme/colors.dart';
 
 Widget buildText(String text, double fontSize, FontWeight fontWeight) {
   return Text(
@@ -8,7 +9,7 @@ Widget buildText(String text, double fontSize, FontWeight fontWeight) {
       fontFamily: 'Poppins',
       fontSize: fontSize,
       fontWeight: fontWeight,
-      color: Color(0xFF292929),
+      color: AppColor.textColor,
     ),
   );
 }

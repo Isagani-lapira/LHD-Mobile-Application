@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:lhd_app/theme/colors.dart';
 
 Widget buildSubmitButton() {
   return ElevatedButton(
     onPressed: () {},
     style: ElevatedButton.styleFrom(
-      backgroundColor: Color(0xFFCC0000),
+      backgroundColor: AppColor.primaryColor,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
     ),
     child: Padding(
