@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lhd_app/screens/aboutusscreen.dart';
 import 'package:lhd_app/screens/homescreen.dart';
+import 'package:lhd_app/screens/servicescreen.dart';
 
 const List<Map<String, dynamic>> kMenuItem = [
   {'title': 'Home', 'icon': Icon(Icons.home_outlined)},
@@ -138,7 +139,7 @@ const List<String> kDrawerNavId = [
   HomeScreen.id,
   'shopping',
   AboutUsScreen.id,
-  'services',
+  ServiceScreen.id,
   'roq',
   'contact',
 ];
@@ -149,3 +150,66 @@ const BoxDecoration kContainerDecor = BoxDecoration(
     topRight: Radius.circular(16.0),
   ),
 );
+
+const List<Map<String, String>> servicesData = [
+  {
+    'title': 'State of Rediness',
+    'descrip': "When the time comes to have your residential floor: plans drawn by a professional you will need to be" +
+        "aware of several things that will take place. First of all, it would be a wise idea to interview several different" +
+        "designers. On the other hand, I have been blessed with having clients show up in my office and they liked what" +
+        "they saw and heard -- and never bothered checking" +
+        "into other designers. A large percentage of my business"
+            "has come from word-of-mouth referrals by extremely"
+            "satisfied clients. Most times comfort levels and good"
+            "rapport are more valuable than mere costs alone."
+  },
+  {
+    'title': 'Stick To Rule Number One',
+    'descrip': "Let's say you are planning on using my services, which I certainly hope you will I follow a certain set" +
+        "of procedures that is very predictable. There are few surprises, and I give it everything I have to make sure" +
+        "that all your wants and needs are met. You see, I operate under one general rule: This is your house." +
+        "You will be living in it so it needs to reflect you, not me. While I do make recommendations at times when" +
+        "it is in your best interests, the final decisions are always yours."
+  },
+  {
+    'title': 'Conducting Preliminary Measures',
+    'descrip':
+        "The first step in getting your residential floor plans mapped out is for me to have a meeting with you. (Larry's Home Designs is located in Pennsylvania but that will not stop me from having a meeting with you. I have designed homes in Montana, Florida, Nova Scotia and various states in the Midwest without ever seeing my clients. The phone, fax and e-mail made communication very easy.) After the initial meeting, I will do what is called a preliminary plan. Your floor plan or plans if you are going for multiple stories, including foundation or basement plan, are drawn to scale, and all 4 outside views, known as elevations, are included in this preliminary plan. The drawings are then sent to you and I highly encourage you to red-mark them, make notes and generally dissect anything you do not like. "
+  },
+  {
+    'title': 'Reviewing and Revising',
+    'descrip': "There are times when my client's residential floor plans do not need any changes from the preliminaries, " +
+        "and if that is the case I go straight to finals where they are totally ready to submit to your local township " +
+        "for a building permit. However, that is usually not the case. Why? Most of my clients randomly sketch their floor" +
+        "plans on paper with total disregard to the actual size of the rooms. Then when I turn it into a scaled drawing some" +
+        " things fit together and some things do not. It is the parts that do not fit together that cause the most problems in " +
+        "design. That's when you; the homeowner, need to decide what you can and cannot sacrifice in your design. I take all of" +
+        " the red marks from the preliminaries and turn them into the second version of a workable floor plan. These are what are" +
+        "known as secondary plans. Ninety-nine percent of the time these plans will meet approval by you, the homeowner. Most of the" +
+        " changes from here on are small and can easily; be made over the phone or e-mail."
+  },
+  {
+    'title': 'Completion Details',
+    'descrip': "When all the disputes and disagreements have been ironed out between spouses" +
+        "on how their residential floor plans and overall home designs should be, then proceed to" +
+        " the final drawing stage. It is at this point that you will be able to sit back and just wait" +
+        "to hear from me about when you can pick up your plans, or have them shipped to you if you are cross-country." +
+        "During the final plans phase I will be doing all the detail work which includes: making sure all the floor plans" +
+        " are fully dimensioned, drawing all structural details so there is absolutely no question on the job site about what" +
+        " is supposed to happen, detailing your window and door sizes, drawing electrical plans, checking everything to make" +
+        " sure it is up to the most recent building codes, and doing a lumber list if you or your builder has requested one."
+            ""
+  },
+  {
+    'title': 'Artistic Finishing Touches',
+    'descrip':
+        """As a former professional artist, it is at this point that your set of residential floor plans has become more than just a job to be done. Your entire design has become a work of art for me. When an entire house plan has been taken from initial idea to the last shingle on the roof without any problems then consider my job completely done. Unlike some other design firms, my company sticks with the project from start to finish. """
+  },
+  {
+    'title': 'Follow Boldly Where Others Have Succeeded',
+    'descrip': "‘Over the years it has been my humble privilege to be able to receive comments" +
+        "from my past clients that include things like: \"Nice job on the plans, you have all" +
+        "great eye for detail.\" \"We have never had plans move through the building permit" +
+        "process this fast before!\""
+  },
+];
