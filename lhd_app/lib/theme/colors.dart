@@ -6,4 +6,5 @@ class AppColor {
   static const Color textColor = Color(0xFF292929);
   static const Color backgroundColor = Color(0xFFFFFFFF);
   static const Color borderOutlineColor = Color(0xFFD2D6DB);
+  static const Color iconColor = Color.fromARGB(255, 153, 153, 153);
 }

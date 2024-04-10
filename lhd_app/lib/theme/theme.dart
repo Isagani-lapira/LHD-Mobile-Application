@@ -4,19 +4,23 @@ import 'package:lhd_app/theme/colors.dart';
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: AppColor.backgroundColor,
+    fontFamily: 'Poppins',
     textTheme: const TextTheme(
       titleLarge: TextStyle(
         fontSize: 32,
         color: AppColor.primaryColor,
         fontWeight: FontWeight.bold,
         fontStyle: FontStyle.italic,
-        fontFamily: 'Poppins',
       ),
+      bodyLarge: TextStyle(
+          color: AppColor.textColor,
+          fontSize: 16.0,
+          fontWeight: FontWeight.w500),
       bodyMedium: TextStyle(
         color: AppColor.textColor,
         fontSize: 14.0,
-        fontFamily: 'Poppins',
       ),
+      bodySmall: TextStyle(color: AppColor.textColor),
     ),
     inputDecorationTheme: InputDecorationTheme(
       focusedBorder: CustomBorders.BorderActiveStyle,
