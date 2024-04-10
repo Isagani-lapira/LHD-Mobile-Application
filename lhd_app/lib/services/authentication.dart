@@ -7,15 +7,9 @@ import 'package:lhd_app/widget/alertdialog.dart';
 class Authentication {
   static final FirebaseAuth auth = FirebaseAuth.instance;
 
-  static bool isLoggedIn() {
-    bool isLoggedIn = false;
-    auth.authStateChanges().listen((user) {
-      if (user != null) {
-        isLoggedIn = true;
-      }
-    });
-
-    return isLoggedIn;
+  static Future<bool> isLoggedIn() async {
+    final user = auth.currentUser;
+    return user != null;
   }
 
   static void isCreationSuccess(context, String emailAddress, String password,
@@ -64,7 +58,6 @@ class Authentication {
 
       if (onLoad != null) onLoad();
     } catch (e) {
-      if (onLoad != null) onLoad();
       showDialog(
           context: context,
           builder: (context) {
