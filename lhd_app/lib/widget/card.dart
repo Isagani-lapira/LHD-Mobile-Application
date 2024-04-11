@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lhd_app/theme/colors.dart';
 import 'package:lhd_app/theme/theme.dart';
 
 class ItemCard extends StatelessWidget {
@@ -17,18 +16,15 @@ class ItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Expanded(
-          flex: 600,
-          child: ClipRRect(
-            borderRadius: const BorderRadius.all(Radius.circular(9.0)),
-            child: Image.asset(
-              path,
-              height: double.infinity,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
+        ClipRRect(
+          borderRadius: const BorderRadius.all(Radius.circular(9.0)),
+          child: Image.asset(
+            path,
+            height: 100.0,
+            width: double.infinity,
+            fit: BoxFit.cover,
           ),
         ),
         Text(
@@ -36,7 +32,7 @@ class ItemCard extends StatelessWidget {
           style: const TextStyle(
             fontFamily: 'Poppins',
             fontWeight: FontWeight.bold,
-            color: AppColor.secondaryColor,
+            fontSize: 12.0,
           ),
         ),
         Row(
@@ -44,11 +40,9 @@ class ItemCard extends StatelessWidget {
           children: [
             Text(
               startPrice,
-              style: const TextStyle(fontSize: 12.0),
             ),
             const Icon(
               Icons.shopping_cart,
-              size: 15.0,
             ),
           ],
         ),
@@ -62,7 +56,7 @@ class ItemCard extends StatelessWidget {
               style: TextStyle(inherit: false),
             ),
           ),
-        )
+        ),
       ],
     );
   }
