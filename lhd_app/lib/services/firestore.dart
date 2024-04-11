@@ -19,4 +19,9 @@ class FireStoreService {
       .collection('feedback')
       .orderBy('datePosted', descending: true)
       .snapshots();
+
+  //retrieve portfolio data
+  static Stream<QuerySnapshot> getPortfolioData() {
+    return FirebaseFirestore.instance.collection('portfolio').snapshots();
+  }
 }

@@ -12,6 +12,10 @@ class AppTheme {
         fontWeight: FontWeight.bold,
         fontStyle: FontStyle.italic,
       ),
+      labelLarge: TextStyle(
+        fontSize: 18.0,
+        fontWeight: FontWeight.bold,
+      ),
       bodyLarge: TextStyle(
           color: AppColor.textColor,
           fontSize: 16.0,
