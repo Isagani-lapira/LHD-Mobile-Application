@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lhd_app/screens/tabs/homesection/categorysection.dart';
 import 'package:lhd_app/screens/tabs/homesection/servicesection.dart';
 import 'package:lhd_app/theme/colors.dart';
+import 'package:lhd_app/widget/welcomecard.dart';
 
 class HomeTab extends StatelessWidget {
   const HomeTab({Key? key});
@@ -13,6 +14,8 @@ class HomeTab extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          WelcomeCard(),
+          SizedBox(height: 15.0),
           TabBar(
             indicatorColor: AppColor.secondaryColor,
             labelColor: AppColor.secondaryColor,
