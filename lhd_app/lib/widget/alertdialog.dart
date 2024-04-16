@@ -9,11 +9,13 @@ class CustomAlertDialog extends StatelessWidget {
   final String title;
   final String message;
   final Function? onPressed;
+  final String positiveButton;
   const CustomAlertDialog({
     super.key,
     required this.title,
     required this.message,
     this.onPressed,
+    this.positiveButton = 'Okay',
   });
 
   Widget selectDialog(context) {
@@ -60,12 +62,17 @@ class CustomAlertDialog extends StatelessWidget {
           onPressed: () {
             onPressed!(context);
           },
-          style: const ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll(Colors.transparent),
+          style: ButtonStyle(
+            backgroundColor: MaterialStatePropertyAll(
+              (positiveButton == 'Okay') ? Colors.transparent : Colors.red,
+            ),
           ),
-          child: const Text(
-            'Okay',
-            style: TextStyle(color: AppColor.textColor),
+          child: Text(
+            positiveButton,
+            style: TextStyle(
+                color: (positiveButton == 'Okay')
+                    ? AppColor.textColor
+                    : Colors.white),
           ),
         ),
       ],
