@@ -213,3 +213,21 @@ const List<Map<String, String>> servicesData = [
         "process this fast before!\""
   },
 ];
+
+const List<Map<String, dynamic>> kActionOptions = [
+  {
+    'icon': Icons.account_circle,
+    'actionName': 'My Account',
+    'subtitle': 'Make changes to your account',
+  },
+  {
+    'icon': Icons.local_mall_outlined,
+    'actionName': 'Order History',
+    'subtitle': 'Make changes to your account this is my first rar',
+  },
+  {
+    'icon': Icons.logout_outlined,
+    'actionName': 'Logout',
+    'subtitle': 'Log your current account to this device',
+  },
+];

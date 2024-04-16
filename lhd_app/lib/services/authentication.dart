@@ -71,4 +71,22 @@ class Authentication {
           });
     }
   }
+
+  static void signOut(context) async {
+    try {
+      await auth.signOut();
+    } catch (e) {
+      showDialog(
+          context: context,
+          builder: (context) {
+            return CustomAlertDialog(
+              title: AppString.warningTitle,
+              message: tripErrorMessage(e.toString()),
+              onPressed: (dialogContext) {
+                Navigator.pop(dialogContext);
+              },
+            );
+          });
+    }
+  }
 }

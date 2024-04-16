@@ -13,7 +13,7 @@ class CredentialView extends StatelessWidget {
       children: [
         const WelcomeCard(isEdittable: true),
         ShoppingActionList(),
-        AccountOption(),
+        const AccountOption(),
       ],
     );
   }
