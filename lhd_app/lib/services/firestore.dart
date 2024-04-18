@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:lhd_app/models/favorite_product.dart';
 
 class FireStoreService {
   // retrieve storage
@@ -23,5 +24,16 @@ class FireStoreService {
   //retrieve portfolio data
   static Stream<QuerySnapshot> getPortfolioData() {
     return FirebaseFirestore.instance.collection('portfolio').snapshots();
+  }
+
+  //add favorite product
+  static Future<void> addProduct(FavoriteProduct product) async {
+    try {
+      FirebaseFirestore.instance.collection('favorite_product').add(
+        {'uid': product.uid, 'productid': product.productID},
+      );
+    } catch (e) {
+      throw Exception(e);
+    }
   }
 }
