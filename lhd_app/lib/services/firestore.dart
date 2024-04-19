@@ -27,7 +27,7 @@ class FireStoreService {
   }
 
   //add favorite product
-  static Future<void> addProduct(FavoriteProduct product) async {
+  static Future<void> addFavorite(FavoriteProduct product) async {
     try {
       FirebaseFirestore.instance.collection('favorite_product').add(
         {'uid': product.uid, 'productid': product.productID},
@@ -47,6 +47,23 @@ class FireStoreService {
 
       bool isExist = snapshot.docs.isNotEmpty;
       return isExist;
+    } catch (e) {
+      throw Exception(e);
+    }
+  }
+
+  static void removeFavorite(FavoriteProduct favoriteProduct) {
+    try {
+      FirebaseFirestore.instance
+          .collection('favorite_product')
+          .where('uid', isEqualTo: favoriteProduct.uid)
+          .where('productid', isEqualTo: favoriteProduct.productID)
+          .get()
+          .then((snapshot) {
+        if (snapshot.docs.isNotEmpty) {
+          snapshot.docs[0].reference.delete();
+        }
+      });
     } catch (e) {
       throw Exception(e);
     }

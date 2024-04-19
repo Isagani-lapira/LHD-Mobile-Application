@@ -17,12 +17,16 @@ class ProductModel {
   });
 
   void toggleFavorite(String uid, String productId) {
-    FireStoreService.addProduct(
-      FavoriteProduct(
-        uid: uid,
-        productID: productId,
-      ),
+    FavoriteProduct favmodel = FavoriteProduct(
+      uid: uid,
+      productID: productId,
     );
+    //add favorite
+    if (!isFavorite) {
+      FireStoreService.addFavorite(favmodel);
+    } else {
+      FireStoreService.removeFavorite(favmodel);
+    }
 
     isFavorite = !isFavorite;
   }
