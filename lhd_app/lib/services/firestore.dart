@@ -36,4 +36,19 @@ class FireStoreService {
       throw Exception(e);
     }
   }
+
+  static Future<bool> isFavorite(String uid, String productID) async {
+    try {
+      QuerySnapshot snapshot = await FirebaseFirestore.instance
+          .collection('favorite_product')
+          .where('uid', isEqualTo: uid)
+          .where('productid', isEqualTo: productID)
+          .get();
+
+      bool isExist = snapshot.docs.isNotEmpty;
+      return isExist;
+    } catch (e) {
+      throw Exception(e);
+    }
+  }
 }
