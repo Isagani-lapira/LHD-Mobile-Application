@@ -39,7 +39,7 @@ class AppTheme {
           color: Colors.white,
           fontFamily: 'Poppins',
         )),
-        padding: MaterialStatePropertyAll(EdgeInsets.symmetric(vertical: 20.0)),
+        padding: MaterialStatePropertyAll(EdgeInsets.symmetric(vertical: 20.0,horizontal: 15.0)),
       ),
     ),
     outlinedButtonTheme: const OutlinedButtonThemeData(

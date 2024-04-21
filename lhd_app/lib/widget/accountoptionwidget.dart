@@ -30,7 +30,7 @@ class _AccountOptionState extends State<AccountOption> {
               return CustomAlertDialog(
                 title: 'Logout',
                 message: 'Are your sure you want to log-out?',
-                positiveButton: 'Delete',
+                positiveButton: 'Log-out',
                 onPressed: (c) {
                   Authentication.signOut(context);
                   Navigator.pushNamed(context, HomeScreen.id);
