@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lhd_app/models/productmodel.dart';
+import 'package:lhd_app/screens/product/selectedproduct.dart';
 import 'package:lhd_app/services/authentication.dart';
 import 'package:lhd_app/theme/colors.dart';
 import 'package:lhd_app/theme/theme.dart';
@@ -86,7 +87,7 @@ class _ProductCardState extends State<ProductCard> {
         padding: const EdgeInsets.symmetric(vertical: 15.0),
         child: ListTile(
           onTap: () {
-            print('detected list tile');
+            Navigator.pushNamed(context, ProductView.id);
           },
           leading: ClipRRect(
             borderRadius: const BorderRadius.all(

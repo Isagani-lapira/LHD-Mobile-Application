@@ -1,9 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:lhd_app/screens/aboutusscreen.dart';
 import 'package:lhd_app/screens/homescreen.dart';
 import 'package:lhd_app/screens/landingscreen.dart';
 import 'package:lhd_app/screens/login.dart';
+import 'package:lhd_app/screens/product/selectedproduct.dart';
 import 'package:lhd_app/screens/servicescreen.dart';
 import 'package:lhd_app/screens/signupscreen.dart';
 import 'package:lhd_app/theme/theme.dart';
@@ -31,6 +31,7 @@ class LHDApp extends StatelessWidget {
         SignUpScreen.id: (context) => const SignUpScreen(),
         AboutUsScreen.id: (context) => const AboutUsScreen(),
         ServiceScreen.id: (context) => const ServiceScreen(),
+        ProductView.id: (context) => const ProductView(),
       },
     );
   }
