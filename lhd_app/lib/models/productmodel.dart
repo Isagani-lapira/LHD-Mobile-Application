@@ -1,4 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:lhd_app/models/favorite_product.dart';
+import 'package:lhd_app/screens/login.dart';
 import 'package:lhd_app/services/firestore.dart';
 
 class ProductModel {
@@ -16,18 +18,28 @@ class ProductModel {
     this.isFavorite = false,
   });
 
-  void toggleFavorite(String uid, String productId) {
+  void toggleFavorite(BuildContext context, String uid, String productId) {
     FavoriteProduct favmodel = FavoriteProduct(
       uid: uid,
       productID: productId,
     );
+
+    bool isErrorOccured = false;
     //add favorite
     if (!isFavorite) {
-      FireStoreService.addFavorite(favmodel);
+      FireStoreService.addFavorite(
+        favmodel,
+        onError: () {
+          Navigator.pushNamed(context, LoginScreen.id);
+          isErrorOccured = true;
+        },
+      );
     } else {
       FireStoreService.removeFavorite(favmodel);
     }
 
-    isFavorite = !isFavorite;
+    if (!isErrorOccured) {
+      isFavorite = !isFavorite;
+    }
   }
 }

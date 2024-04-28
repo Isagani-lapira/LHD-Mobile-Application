@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:lhd_app/models/favorite_product.dart';
+import 'package:lhd_app/services/authentication.dart';
 
 class FireStoreService {
   // retrieve storage
@@ -27,13 +28,18 @@ class FireStoreService {
   }
 
   //add favorite product
-  static Future<void> addFavorite(FavoriteProduct product) async {
-    try {
-      FirebaseFirestore.instance.collection('favorite_product').add(
-        {'uid': product.uid, 'productid': product.productID},
-      );
-    } catch (e) {
-      throw Exception(e);
+  static Future<void> addFavorite(FavoriteProduct product,
+      {Function()? onError}) async {
+    if (Authentication.getUID() != '') {
+      try {
+        FirebaseFirestore.instance.collection('favorite_product').add(
+          {'uid': product.uid, 'productid': product.productID},
+        );
+      } catch (e) {
+        throw Exception(e);
+      }
+    } else {
+      onError!();
     }
   }
 
