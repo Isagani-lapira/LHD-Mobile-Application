@@ -12,6 +12,10 @@ class Authentication {
     return user != null;
   }
 
+  static String getUID() {
+    return auth.currentUser?.uid ?? '';
+  }
+
   static void isCreationSuccess(context, String emailAddress, String password,
       {Function? onLoad}) async {
     try {
