@@ -42,7 +42,7 @@ class ProductListView extends StatelessWidget {
         }
         return ListView.builder(
           itemBuilder: ((context, index) {
-            String uid = Authentication.auth.currentUser!.uid;
+            String uid = Authentication.getUID();
             String productID = products[index].id;
 
             return FutureBuilder<bool>(
@@ -53,7 +53,6 @@ class ProductListView extends StatelessWidget {
                 } else if (snapshot.hasError) {
                   return Text('Error: ${snapshot.error}');
                 }
-
                 bool isFavorite = snapshot.data ?? false;
                 ProductModel productModel = ProductModel(
                   id: productID,

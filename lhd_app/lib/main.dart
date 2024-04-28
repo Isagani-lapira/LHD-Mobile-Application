@@ -33,6 +33,7 @@ class LHDApp extends StatelessWidget {
         ServiceScreen.id: (context) => const ServiceScreen(),
         ProductView.id: (context) => const ProductView(),
       },
+      debugShowCheckedModeBanner: false,
     );
   }
 }

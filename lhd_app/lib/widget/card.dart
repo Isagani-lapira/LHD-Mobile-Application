@@ -81,7 +81,7 @@ class _ProductCardState extends State<ProductCard> {
   @override
   Widget build(BuildContext context) {
     ProductModel productModel = widget.productModel;
-    String uid = Authentication.auth.currentUser!.uid;
+    String uid = Authentication.getUID();
     return Card(
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 15.0),
@@ -106,7 +106,7 @@ class _ProductCardState extends State<ProductCard> {
           ),
           trailing: GestureDetector(
             onTap: () {
-              productModel.toggleFavorite(uid, productModel.id);
+              productModel.toggleFavorite(context, uid, productModel.id);
               setState(() {
                 productModel.isFavorite;
               });
